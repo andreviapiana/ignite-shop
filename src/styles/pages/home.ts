@@ -2,7 +2,6 @@ import { styled } from '..'
 
 export const HomeContainer = styled('main', {
   display: 'flex',
-  gap: '3rem',
   width: '100%',
   maxWidth: 'calc(100vw - ((100vw - 1180px) / 2))',
   marginLeft: 'auto',
@@ -12,7 +11,6 @@ export const HomeContainer = styled('main', {
 export const Product = styled('a', {
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  padding: '0.25rem',
   cursor: 'pointer',
   position: 'relative',
   overflow: 'hidden',
@@ -59,6 +57,42 @@ export const Product = styled('a', {
     footer: {
       transform: 'translateY(0%)',
       opacity: 1,
+    },
+  },
+})
+
+export const ArrowButton = styled('button', {
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  width: '8.5rem',
+  height: '100%',
+  background:
+    'linear-gradient(270deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
+  cursor: 'pointer',
+  border: 'none',
+  outline: 'none',
+  color: '$white',
+  fill: '$white',
+  padding: '0 1rem',
+
+  variants: {
+    direction: {
+      left: {
+        left: 0,
+        textAlign: 'left',
+      },
+      right: {
+        right: 0,
+        textAlign: 'right',
+        background:
+          'linear-gradient(90deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
+      },
+    },
+    disabled: {
+      true: {
+        opacity: 0.5,
+      },
     },
   },
 })
