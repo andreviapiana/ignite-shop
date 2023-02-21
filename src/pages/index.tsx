@@ -10,7 +10,7 @@ import camiseta2 from '../assets/camisetas/2.png'
 import camiseta3 from '../assets/camisetas/3.png'
 import { useState } from 'react'
 
-export default function Home() {
+export default function Home(props) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -50,8 +50,10 @@ export default function Home() {
       </ArrowButton>
     )
   }
+  
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
+      <pre>{JSON.stringify(props.list)}</pre>
       <Product className="keen-slider__slide">
         <Image src={camiseta1} width={520} height={480} alt="" />
 
@@ -111,4 +113,16 @@ export default function Home() {
       )}
     </HomeContainer>
   )
+}
+
+export const getServerSideProps = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
+  console.log('rodou')
+
+  return {
+    props: {
+      list: [1, 2, 3],
+    },
+  }
 }
