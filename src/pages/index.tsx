@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import Head from 'next/head'
+
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
@@ -64,48 +66,54 @@ export default function Home({ products }: HomeProps) {
   }
 
   return (
-    <HomeContainer ref={sliderRef} className="keen-slider">
-      {products.map((product) => {
-        return (
-          <Link
-            href={`/product/${product.id}`}
-            key={product.id}
-            prefetch={false}
-          >
-            <Product className="keen-slider__slide">
-              <Image src={product.imageUrl} width={520} height={480} alt="" />
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
 
-              <footer>
-                <strong>{product.name}</strong>
-                <span>{product.price}</span>
-              </footer>
-            </Product>
-          </Link>
-        )
-      })}
+      <HomeContainer ref={sliderRef} className="keen-slider">
+        {products.map((product) => {
+          return (
+            <Link
+              href={`/product/${product.id}`}
+              key={product.id}
+              prefetch={false}
+            >
+              <Product className="keen-slider__slide">
+                <Image src={product.imageUrl} width={520} height={480} alt="" />
 
-      {loaded && instanceRef.current && (
-        <>
-          <Arrow
-            left
-            onClick={(e: { stopPropagation: () => any }) =>
-              e.stopPropagation() || instanceRef.current?.prev()
-            }
-            disabled={currentSlide === 0}
-          />
+                <footer>
+                  <strong>{product.name}</strong>
+                  <span>{product.price}</span>
+                </footer>
+              </Product>
+            </Link>
+          )
+        })}
 
-          <Arrow
-            onClick={(e: { stopPropagation: () => any }) =>
-              e.stopPropagation() || instanceRef.current?.next()
-            }
-            disabled={
-              currentSlide ===
-              instanceRef.current.track.details.slides.length - 1
-            }
-          />
-        </>
-      )}
-    </HomeContainer>
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow
+              left
+              onClick={(e: { stopPropagation: () => any }) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
+
+            <Arrow
+              onClick={(e: { stopPropagation: () => any }) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+              disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              }
+            />
+          </>
+        )}
+      </HomeContainer>
+    </>
   )
 }
 
