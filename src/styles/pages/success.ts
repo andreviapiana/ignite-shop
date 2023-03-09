@@ -18,13 +18,13 @@ export const SuccessContainer = styled('main', {
     color: '$gray300',
     maxWidth: 560,
     textAlign: 'center',
-    marginTop: '2rem',
+    marginTop: '3.2rem',
     lineHeight: 1.4,
   },
 
   a: {
     display: 'block',
-    marginTop: '5rem',
+    marginTop: '8rem',
     fontSize: '$lg',
     color: '$green500',
     textDecoration: 'none',
@@ -42,8 +42,8 @@ export const ImageContainer = styled('div', {
   height: 145,
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
   borderRadius: 8,
-  padding: '0.25rem',
-  marginTop: '4rem',
+  padding: '0.4rem',
+  marginTop: '6.4rem',
 
   display: 'flex',
   alignItems: 'center',

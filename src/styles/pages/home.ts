@@ -25,10 +25,10 @@ export const Product = styled('div', {
 
   footer: {
     position: 'absolute',
-    bottom: '0.25rem',
-    left: '0.25rem',
-    right: '0.25rem',
-    padding: '2rem',
+    bottom: '0.4rem',
+    left: '0.4rem',
+    right: '0.4rem',
+    padding: '3.2rem',
 
     borderRadius: 6,
 
@@ -66,7 +66,7 @@ export const ArrowButton = styled('button', {
   position: 'absolute',
   top: '50%',
   transform: 'translateY(-50%)',
-  width: '8.5rem',
+  width: '13.6rem',
   height: '100%',
   background:
     'linear-gradient(270deg, rgba(18, 18, 20, 0) 0%, rgba(18, 18, 20, 0.75) 100%)',
@@ -75,7 +75,7 @@ export const ArrowButton = styled('button', {
   outline: 'none',
   color: '$white',
   fill: '$white',
-  padding: '0 1rem',
+  padding: '0 1.6rem',
 
   variants: {
     direction: {
