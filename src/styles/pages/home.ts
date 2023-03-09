@@ -28,7 +28,8 @@ export const Product = styled('div', {
     bottom: '0.4rem',
     left: '0.4rem',
     right: '0.4rem',
-    padding: '3.2rem',
+    padding: '2rem',
+    gap: '0.4rem',
 
     borderRadius: 6,
 
@@ -45,12 +46,19 @@ export const Product = styled('div', {
     strong: {
       fontSize: '$lg',
       color: '$gray100',
+      lineHeight: '3.2rem',
     },
 
     span: {
       fontSize: '$xl',
       fontWeight: 'bold',
       color: '$green300',
+      height: '3.4rem',
+    },
+
+    '.infos': {
+      display: 'flex',
+      flexDirection: 'column',
     },
   },
 
@@ -59,6 +67,20 @@ export const Product = styled('div', {
       transform: 'translateY(0%)',
       opacity: 1,
     },
+  },
+})
+
+export const CartButton = styled('button', {
+  background: '$green500',
+  height: '5.6rem',
+  width: '5.6rem',
+  borderRadius: 6,
+  cursor: 'pointer',
+  border: 'none',
+  color: '$white',
+
+  '&:hover': {
+    background: '$green300',
   },
 })
 
