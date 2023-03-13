@@ -5,9 +5,10 @@ import { Handbag } from 'phosphor-react'
 import Link from 'next/link'
 import * as Dialog from '@radix-ui/react-dialog'
 import ShoppingCart from '../ShoppingCart'
+import { useShoppingCart } from 'use-shopping-cart'
 
 export default function Header() {
-  const cartItems = ['1']
+  const { cartCount } = useShoppingCart()
 
   return (
     <HeaderContainer>
@@ -18,7 +19,7 @@ export default function Header() {
       <Dialog.Root>
         <CartContainer>
           <Handbag size={24} weight="bold" />
-          {cartItems.length > 0 && <span>{cartItems.length}</span>}
+          {cartCount > 0 && <span>{cartCount}</span>}
         </CartContainer>
         <ShoppingCart />
       </Dialog.Root>
