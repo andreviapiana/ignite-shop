@@ -22,6 +22,11 @@ export const SuccessContainer = styled('main', {
     lineHeight: 1.4,
   },
 
+  strong: {
+    fontSize: '$xl',
+    color: '$green500',
+  },
+
   a: {
     display: 'block',
     marginTop: '8rem',
@@ -37,12 +42,12 @@ export const SuccessContainer = styled('main', {
 })
 
 export const ImageContainer = styled('div', {
-  width: '100%',
-  maxWidth: 130,
-  height: 145,
   background: 'linear-gradient(180deg, #1ea483 0%, #7465d4 100%)',
-  borderRadius: 8,
-  padding: '0.4rem',
+  boxShadow: '0px 0px 60px rgba(0, 0, 0, 0.8)',
+
+  width: '14rem',
+  height: '14rem',
+  borderRadius: 9999,
   marginTop: '6.4rem',
 
   display: 'flex',
@@ -51,5 +56,16 @@ export const ImageContainer = styled('div', {
 
   img: {
     objectFit: 'cover',
+  },
+})
+
+export const ProductsContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginRight: 52,
+
+  div: {
+    marginRight: -52,
   },
 })
