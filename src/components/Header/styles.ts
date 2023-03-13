@@ -1,4 +1,5 @@
 import { styled } from '../../styles'
+import * as Dialog from '@radix-ui/react-dialog'
 
 export const HeaderContainer = styled('header', {
   display: 'flex',
@@ -11,7 +12,7 @@ export const HeaderContainer = styled('header', {
   margin: '0 auto',
 })
 
-export const CartContainer = styled('div', {
+export const CartContainer = styled(Dialog.Trigger, {
   position: 'relative',
 
   display: 'flex',
@@ -22,6 +23,7 @@ export const CartContainer = styled('div', {
   height: 48,
   padding: 12,
   borderRadius: 6,
+  border: 'none',
 
   backgroundColor: '$gray800',
 
@@ -43,6 +45,7 @@ export const CartContainer = styled('div', {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    color: '$white',
 
     backgroundColor: '$green500',
 
