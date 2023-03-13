@@ -156,7 +156,7 @@ export const FinishContainer = styled('div', {
 
     transition: 'background-color 0.2s',
 
-    disabled: {
+    '&:disabled': {
       opacity: 0.6,
       cursor: 'not-allowed',
     },
