@@ -17,6 +17,7 @@ import axios from 'axios'
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 import { Product as IProduct } from 'use-shopping-cart/core'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 export default function ShoppingCart() {
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] =
@@ -31,7 +32,10 @@ export default function ShoppingCart() {
 
   const isCartEmpty = cartCount === 0
 
-  function handleRemoveItem(id: string) {
+  function handleRemoveItem(id: string, name: string) {
+    toast.warning(`${name} removida do carrinho!`, {
+      theme: 'dark',
+    })
     removeItem(id)
   }
 
@@ -94,7 +98,9 @@ export default function ShoppingCart() {
                       <p>x {cartItem.quantity}</p>
                     </strong>
                   </div>
-                  <button onClick={() => handleRemoveItem(cartItem.id)}>
+                  <button
+                    onClick={() => handleRemoveItem(cartItem.id, cartItem.name)}
+                  >
                     Remover
                   </button>
                 </div>

@@ -14,6 +14,8 @@ import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 import { Product as IProduct } from 'use-shopping-cart/core'
 import { useRouter } from 'next/router'
 
+import { toast } from 'react-toastify'
+
 export default function Product({ product }: IProduct) {
   const [isAddedItemToCart, setIsisAddedItemToCart] = useState(false)
   const { addItem } = useShoppingCart()
@@ -26,6 +28,10 @@ export default function Product({ product }: IProduct) {
 
   async function handleAddProductToCart() {
     setIsisAddedItemToCart(true)
+
+    toast.success(`${product.name} adicionada ao carrinho!`, {
+      theme: 'dark',
+    })
 
     addItem(product)
     setIsisAddedItemToCart(false)

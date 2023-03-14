@@ -7,6 +7,9 @@ import Header from '@/components/Header'
 
 import { CartProvider } from 'use-shopping-cart'
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 globalStyles()
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <Component {...pageProps} />
       </Container>
+      <ToastContainer />
     </CartProvider>
   )
 }

@@ -22,6 +22,7 @@ import Link from 'next/link'
 import { Handbag } from 'phosphor-react'
 
 import { useShoppingCart } from 'use-shopping-cart'
+import { toast } from 'react-toastify'
 
 interface HomeProps {
   products: {
@@ -98,6 +99,10 @@ export default function Home({ products }: HomeProps) {
                 </div>
                 <CartButton
                   onClick={() => {
+                    toast.success(`${product.name} adicionada ao carrinho!`, {
+                      theme: 'dark',
+                    })
+
                     addItem({
                       id: product.id,
                       name: product.name,
