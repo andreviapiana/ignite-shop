@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       currency="BRL"
       language="pt-BR"
       loading={<p>Loading</p>}
+      shouldPersist={true}
     >
       <Container>
         <Header />
