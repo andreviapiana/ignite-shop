@@ -10,6 +10,11 @@ export const HeaderContainer = styled('header', {
   maxWidth: 1180,
   padding: '3.2rem 0',
   margin: '0 auto',
+
+  '@media (max-width: 768px)': {
+    display: 'flex',
+    padding: '2rem',
+  },
 })
 
 export const CartContainer = styled(Dialog.Trigger, {

@@ -16,10 +16,6 @@ export const globalStyles = globalCss({
     fontWeight: 'bolder',
   },
 
-  '.Toastify__toast-container': {
-    minWidth: '52rem',
-  },
-
   body: {
     backgroundColor: '$gray900',
     color: '$gray100',
