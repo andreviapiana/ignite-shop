@@ -71,6 +71,21 @@ export const ItemsContainer = styled('div', {
   gap: '1.5rem',
 })
 
+export const ErrorContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+  gap: '2.5rem',
+  marginTop: '10rem',
+
+  color: '$green300',
+
+  strong: {
+    fontSize: '$lg',
+  },
+})
+
 export const Item = styled('div', {
   display: 'flex',
   alignItems: 'center',
@@ -85,10 +100,16 @@ export const Item = styled('div', {
   },
 
   strong: {
-    display: 'block',
     fontSize: '$md',
     fontWeight: 'bold',
     marginBottom: '0.8rem',
+    display: 'flex',
+    gap: '2rem',
+
+    p: {
+      fontSize: '$md',
+      color: '$green300',
+    },
   },
 
   button: {

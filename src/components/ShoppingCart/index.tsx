@@ -1,8 +1,9 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { X } from 'phosphor-react'
+import { X, XCircle } from 'phosphor-react'
 import {
   Close,
   Content,
+  ErrorContainer,
   FinishContainer,
   ImageContainer,
   Item,
@@ -69,27 +70,43 @@ export default function ShoppingCart() {
 
         <Title>Sacola de compras</Title>
 
-        <ItemsContainer>
-          {cart.map((cartItem) => (
-            <Item key={cartItem.id}>
-              <ImageContainer>
-                <Image src={cartItem.imageUrl} alt="" width={95} height={95} />
-              </ImageContainer>
-              <div>
-                <h4>{cartItem.name}</h4>
-                <strong>
-                  {formatCurrencyString({
-                    value: cartItem.price,
-                    currency: cartItem.currency,
-                  })}
-                </strong>
-                <button onClick={() => handleRemoveItem(cartItem.id)}>
-                  Remover
-                </button>
-              </div>
-            </Item>
-          ))}
-        </ItemsContainer>
+        {cartCount > 0 ? (
+          <ItemsContainer>
+            {cart.map((cartItem) => (
+              <Item key={cartItem.id}>
+                <ImageContainer>
+                  <Image
+                    src={cartItem.imageUrl}
+                    alt=""
+                    width={95}
+                    height={95}
+                  />
+                </ImageContainer>
+                <div>
+                  <h4>{cartItem.name}</h4>
+                  <div className="quantity">
+                    <strong>
+                      {formatCurrencyString({
+                        value: cartItem.price,
+                        currency: cartItem.currency,
+                      })}
+
+                      <p>x {cartItem.quantity}</p>
+                    </strong>
+                  </div>
+                  <button onClick={() => handleRemoveItem(cartItem.id)}>
+                    Remover
+                  </button>
+                </div>
+              </Item>
+            ))}
+          </ItemsContainer>
+        ) : (
+          <ErrorContainer>
+            <strong>Oooooops! Seu carrinho está vazio!</strong>
+            <XCircle size={132} />
+          </ErrorContainer>
+        )}
 
         <FinishContainer>
           <div>
