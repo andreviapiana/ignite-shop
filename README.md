@@ -3,9 +3,9 @@
 </p>
 
 <p align="center" margin-top="25px" >
-  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/andreviapiana/igniteTimer" />
+  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/andreviapiana/ignite-shop" />
 
-  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/andreviapiana/igniteTimer" />
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/andreviapiana/ignite-shop" />
 </p>
 
 
